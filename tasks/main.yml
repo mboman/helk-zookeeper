@@ -1,2 +1,11 @@
 ---
-# tasks file for helk-zookeeper
+
+- name: Creating HELK Kafka Zookeeper directories
+  file:
+    path: "{{ ZOO_HOME }}"
+    state: directory
+
+- name: Copy HELK Kafka Zookeeper configuration
+  copy:
+    src: scripts
+    dest: "{{ ZOO_HOME }}/scripts"
